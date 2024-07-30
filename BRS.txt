@@ -1,0 +1,272 @@
+
+### 2. **Introduction**
+
+**1. Introduction**
+
+This document outlines the system requirements and scope for the development of the GrocerEase System. The GrocerEase System is divided into four primary modules: Customer, Shop Owner, Admin, and the Acknowledgement part. This document details the requirements for the Customer, Shop Owner, and Admin modules.
+
+---
+
+### 3. **Functional Requirements**
+
+**2. Functional Requirements**
+
+The GrocerEase System has three main modules: Customer, Shop Owner, and Admin. Each module consists of various processes as outlined below:
+
+#### **2.1 Customer Module**
+
+**2.1.1 Account Creation Process**
+
+- **Description:** Users must create an account to use the system.
+- **Required Information:**
+  - **Login Information:**
+    - UserID (unique, case-insensitive)
+    - Password (8-16 characters including numeric, capital, small, and special characters; encrypted)
+    - First Name
+    - Last Name
+    - E-mail Address
+  - **Contact Details:**
+    - Permanent Address (state selection required)
+    - Contact Phone No
+  - **Security Question Information:**
+    - Selected Question
+    - Answer
+
+**2.1.2 Login Process**
+
+- **Description:** Authentication is required for all users except when creating a new account.
+- **Requirements:**
+  - UserID and Password must be correct.
+  - UserID should be available (not suspended).
+  - Successful authentication leads to the “Customer Home” page with options to logout, update account, change password, search products, add products to cart, edit/delete products, view order history, and give feedback.
+
+**2.1.3 Forgot Password Process**
+
+- **Description:** Password recovery through security question and email.
+- **Requirements:**
+  - User enters UserID and answer to security question.
+  - If correct, a new password is sent via email.
+  - New password must meet the same constraints as the original.
+
+**2.1.4 Change Password Process**
+
+- **Description:** Allows users to change their current password.
+- **Requirements:**
+  - Enter current and new passwords (8-16 characters, encrypted).
+  - New password must be entered twice for confirmation.
+
+**2.1.5 Update Account Process**
+
+- **Description:** Allows users to update their account information.
+- **Updatable Information:**
+  - **Login Information:** First Name, Last Name, E-mail Address
+  - **User Information:** User Name, User Phone No, E-mail Address, Permanent Address
+  - **Security Question Information:** Selected Question, Answer
+
+**2.1.6 Search Product**
+
+- **Description:** Search for products based on category.
+
+**2.1.7 Add Product To Cart**
+
+- **Description:** Add products to the shopping cart.
+- **Requirements:** 
+  - Product Category
+  - Price
+  - Product Name
+  - Quantity
+  - Photos
+
+**2.1.8 Delete Product From Cart**
+
+- **Description:** Remove products from the cart.
+
+**2.1.9 Show Order History**
+
+- **Description:** View information about previous orders.
+
+**2.1.10 Give Feedback**
+
+- **Description:** Submit feedback about products, vendors, and overall system experience.
+
+---
+
+#### **2.2 Shop Owner Module**
+
+**2.2.1 Send Request For Account Creation**
+
+- **Description:** Shop owners must request account creation, which must be approved by the admin.
+- **Required Information:**
+  - **Login Information:** UserID, Password, First Name, Last Name, E-mail Address
+  - **Contact Details:** Permanent Address, Contact Phone No
+  - **Security Question Information:** Selected Question, Answer
+
+**2.2.2 Login Process**
+
+- **Description:** Authentication is required for shop owners.
+- **Requirements:**
+  - UserID and Password must be correct.
+  - User Type must be “Shop Owner”.
+  - UserID should be available.
+
+**2.2.3 Forgot Password Process**
+
+- **Description:** Password recovery for shop owners.
+- **Requirements:**
+  - Enter UserID and answer to the security question.
+  - New password sent via email if the answer is correct.
+
+**2.2.4 Change Password Process**
+
+- **Description:** Allows shop owners to change their current password.
+- **Requirements:** 
+  - Enter current and new passwords (8-16 characters, encrypted).
+
+**2.2.5 Edit Account Process**
+
+- **Description:** Update account information for shop owners.
+- **Updatable Information:**
+  - **Login Information:** First Name, Last Name, E-mail Address
+  - **User Information:** User Name, User Phone No, E-mail Address, Permanent Address
+  - **Security Question Information:** Selected Question, Answer
+
+**2.2.6 Add Product**
+
+- **Description:** Add new products for sale.
+- **Requirements:**
+  - Product Name
+  - Price
+  - Quantity
+  - Photos
+
+**2.2.7 Edit Product**
+
+- **Description:** Update product specifications.
+- **Conditions:**
+  - Product Category
+  - Price Range
+  - Product Quantity
+  - Product Name
+
+**2.2.8 Manage Inventory**
+
+- **Description:** Monitor and manage inventory levels.
+- **Conditions:**
+  - Notification when product quantity drops below a threshold.
+
+**2.2.9 Manage Orders**
+
+- **Description:** Handle orders, including processing, delivery status, and cancellations.
+
+---
+
+#### **2.3 Admin Module**
+
+**2.3.1 Login Process**
+
+- **Description:** Admin authentication.
+- **Requirements:**
+  - UserID and Password must be correct.
+  - User Type must be “Admin”.
+  - UserID should be available.
+
+**2.3.2 Approve Account Creation Request**
+
+- **Description:** Admin verifies and approves shop owner requests.
+
+**2.3.3 Adding Product Through Category**
+
+- **Description:** Admin can add products to the system through categories.
+
+**2.3.4 Manage Password**
+
+- **Description:** Admin password management.
+- **Requirements:**
+  - Enter current and new passwords (8-16 characters, encrypted).
+
+**2.3.5 Update Account Process**
+
+- **Description:** Admin can update their account information.
+- **Updatable Information:**
+  - **Login Information:** First Name, Last Name, E-mail Address
+  - **User Information:** User Name, User Phone No, E-mail Address, Permanent Address
+  - **Security Question Information:** Selected Question, Answer
+
+**2.3.6 Report Generation**
+
+- **Description:** Generate daily and monthly reports on user enrollment and other metrics.
+
+**2.3.7 Manage User And Vendor Accounts**
+
+- **Description:** Admin can enable or disable user accounts.
+
+---
+
+### 4. **Use Case Diagrams**
+
+**2.4 Use Case Diagram**
+
+**Admin:**
+- **Actors:** Admin
+- **Use Cases:**
+  - Login
+  - Report Generation
+  - Manage Accounts
+
+**Customer:**
+- **Actors:** Customer
+- **Use Cases:**
+  - Register
+  - Login
+  - Browse Product
+  - Update Profile
+  - Manage Cart
+  - View Order History
+  - Make Payment
+  - Change Password
+  - Give Feedback
+  - Logout
+  - Forgotten Password
+
+**Shop Owner:**
+- **Actors:** Shop Owner
+- **Use Cases:**
+  - Register
+  - Login
+  - Update Account
+  - Manage Stocks
+  - Add Product
+  - Edit Product
+  - Manage Orders
+  - Change Password
+  - Forgot Password
+
+---
+
+### 5. **Document Structure**
+
+To finalize the document, format it as follows:
+
+- **Title Page:** Include the document title, version, status, and creation details.
+- **Table of Contents:** Automatically generated based on section headings.
+- **Introduction:** Brief overview of the system.
+- **Functional Requirements:** Detailed description of each module and process.
+- **Use Case Diagrams:** Visual representation of use cases for each actor.
+
+---
+
+### Creating the PDF
+
+1. **Write or Format Document:**
+   - Use a word processor like Microsoft Word or Google Docs.
+   - Format sections, headings, and lists as outlined above.
+
+2. **Export as PDF:**
+   - In Microsoft Word: Go to `File` > `Save As` > Select `PDF` from the dropdown.
+   - In Google Docs: Go to `File` > `Download` > Select `PDF Document (.pdf)`.
+
+3. **Review and Finalize:**
+   - Ensure all content is correct and formatted properly.
+   - Review for any errors or missing information.
+
+This guide provides a structured approach to converting your data into a professional SRS document.
